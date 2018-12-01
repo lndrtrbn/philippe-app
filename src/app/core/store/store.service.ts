@@ -23,6 +23,28 @@ export class StoreService {
       new SoundState(),
       new ChannelState()
     );
+
+    // =====================
+    // === MOCK THE DATA ===
+    // =====================
+    this.get(UserState).setUser({
+      token: 'ccsv'
+    });
+    this.get(SoundState).setSounds([
+      { id: '1', name: 'Je sais où tu t\'cache' },
+      { id: '2', name: 'TA GUEUUULE' },
+      { id: '3', name: 'Je sais où tu t\'cache' },
+      { id: '4', name: 'Viens ici sale enculé' },
+      { id: '5', name: 'TA GUEUUULE' },
+    ]);
+    this.get(ChannelState).setChannels([
+      { id: '1', name: 'Channel 1', people: [] },
+      { id: '2', name: 'Channel 2', people: [{ name: 'Jean Mich' }] },
+      { id: '3', name: 'Channel 3', people: [{ name: 'Jacques' }, { name: 'J0si4nn3' }] },
+      { id: '4', name: 'Channel 4', people: [{ name: 'DK v4d0R' }] },
+    ]);
+    // =====================
+    // =====================
   }
 
   /**
