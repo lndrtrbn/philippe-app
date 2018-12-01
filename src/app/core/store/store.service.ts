@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { State } from './state.interface';
 import { UserState } from './user/user.state';
+import { SoundState } from './sounds/sound.state';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,10 @@ export class StoreService {
    */
   constructor() {
     // ADD YOUR STATES HERE
-    this.states.push(new UserState());
+    this.states.push(
+      new UserState(),
+      new SoundState()
+    );
   }
 
   /**

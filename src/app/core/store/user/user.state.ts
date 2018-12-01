@@ -3,12 +3,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from './user.interface';
 import { State } from '../state.interface';
 
-/**
- * STATE OF USER DATA
- * ==================
- * 
- * Contains the data of the user, ie his token
- */
 export class UserState implements State {
 
   name = 'user-state';
