@@ -1,0 +1,7 @@
+@import '../../../styles/variables';
+
+#app-brand {
+  height: 100%;
+  -webkit-app-region: drag;
+  background-color: $primary;
+}

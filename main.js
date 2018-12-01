@@ -6,8 +6,9 @@ let win;
 
 function createWindow() {
   win = new BrowserWindow({
-    width: 1200, height: 750,
-    autoHideMenuBar: true
+    width: 1050, height: 700,
+    autoHideMenuBar: true,
+    frame: false
   });
 
   win.loadURL('http://localhost:4200');

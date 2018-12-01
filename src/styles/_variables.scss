@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 
 // COLORS
 
-$primary:     #212D3A;
-$secondary:   #1A2632;
+$primary:     #efefef;
+$secondary:   #f5f5f5;
+$tertiary:    #19232D;
 
-$dark:        #161E26;
+$dark:        #111921;
 $light:       #8899A6;
 $white:       #FFFFFF;
 
 $accent:      #FD7272;
 
-// FONTS  
+
+// FONT
+
+$font:        'Roboto', sans-serif;

@@ -1,0 +1,21 @@
+#app-root {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 320px auto;
+  grid-template-rows: 70px auto;
+  grid-template-areas:
+      'brand header'
+      'sidebar main';
+
+  app-header {
+    grid-area: header;
+  }
+
+  app-sidebar {
+    grid-area: sidebar;
+  }
+
+  app-main {
+    grid-area: main;
+  }
+}
