@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { State } from './state.interface';
 import { UserState } from './user/user.state';
 import { SoundState } from './sounds/sound.state';
+import { ChannelState } from './channels/channel.state';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class StoreService {
     // ADD YOUR STATES HERE
     this.states.push(
       new UserState(),
-      new SoundState()
+      new SoundState(),
+      new ChannelState()
     );
   }
 

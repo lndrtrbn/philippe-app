@@ -1,10 +1,11 @@
-import { State } from '../state.interface';
 import { BehaviorSubject, Observable } from 'rxjs';
+
+import { State } from '../state.interface';
 import { Sound } from './sound.interface';
 
 export class SoundState implements State {
 
-  name = 'sounds-store';
+  name = 'sounds-state';
 
   // All the sounds availabled
   private readonly _sounds = new BehaviorSubject<Sound[]>([]);
