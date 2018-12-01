@@ -3,12 +3,12 @@
 #app-brand {
   height: 100%;
   -webkit-app-region: drag;
-  background-color: $light;
+  background-color: $accent;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: move;
-  border-bottom: 1px solid $light;
+  border-bottom: 1px solid $accent;
 
   .brand--logo {
     width: 40px;
@@ -16,7 +16,6 @@
   }
 
   .brand--name {
-    text-transform: uppercase;
     margin-left: 20px;
   }
 }

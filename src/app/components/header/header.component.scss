@@ -4,4 +4,31 @@
   height: 100%;
   background-color: $secondary;
   border-bottom: 1px solid $light;
+
+  .search {
+    height: 100%;
+    display: flex;
+    justify-content: stretch;
+  }
+
+  .search--input {
+    flex: 1;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    padding: 0 40px;
+    font-size: 20px;
+    color: $dark;
+  }
+
+  .search--submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    
+    i {
+      color: $accent;
+    }
+  }
 }
