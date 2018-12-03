@@ -1,3 +1,5 @@
+@import '../styles//variables';
+
 #app-root {
   height: 100vh;
   display: grid;
@@ -16,10 +18,23 @@
   }
 
   app-main {
+    overflow-y: auto;
     grid-area: main;
   }
 
   app-brand {
     grid-area: brand;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+      background-color: $light;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+      background-color: $accent;
   }
 }
