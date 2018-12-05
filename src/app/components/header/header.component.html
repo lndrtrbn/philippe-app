@@ -1,8 +1,9 @@
 <div id="app-header">
-  <form class="search">
-      <input class="search--input" type="text" placeholder="Sais-tu où il se cache ??">
+  <div class="search">
+      <input class="search--input" type="text" placeholder="Sais-tu où il se cache ??"
+      #searchInput (keyup)="search(searchInput.value)">
       <div class="search--submit">
         <i class="fas fa-search fa-2x"></i>
       </div>
-  </form>
+  </div>
 </div>

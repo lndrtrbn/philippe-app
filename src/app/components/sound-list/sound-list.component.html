@@ -1,4 +1,4 @@
 <div id="app-sound-list">
-  <app-sound-item [sound]="sound" *ngFor="let sound of (soundState.sounds | async)">
+  <app-sound-item [sound]="sound" *ngFor="let sound of filteredSounds">
   </app-sound-item>
 </div>
