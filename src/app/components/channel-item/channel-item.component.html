@@ -1,0 +1,16 @@
+<div id="app-channel-item" [ngClass]="{'selected': botInfo.channelId == channel.id }">
+  <p class="channel-item--name">
+    {{ channel.name }} &middot; <span>{{ channel.people.length }} online</span>
+  </p>
+
+  <div class="channel-item--people">
+    <div class="channel-item--person" *ngIf="botInfo.channelId == channel.id">
+      <div class="channel-item--person--picture"></div>
+      <p class="channel-item--person--name">Philippe</p>
+    </div>
+    <div class="channel-item--person" *ngFor="let person of channel.people">
+      <div class="channel-item--person--picture"></div>
+      <p class="channel-item--person--name">{{ person.name }}</p>
+    </div>
+  </div>
+</div>

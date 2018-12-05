@@ -8,6 +8,8 @@ import { MainComponent } from './components/main/main.component';
 import { BrandComponent } from './components/brand/brand.component';
 import { SoundItemComponent } from './components/sound-item/sound-item.component';
 import { SoundListComponent } from './components/sound-list/sound-list.component';
+import { ChannelListComponent } from './components/channel-list/channel-list.component';
+import { ChannelItemComponent } from './components/channel-item/channel-item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { SoundListComponent } from './components/sound-list/sound-list.component
     MainComponent,
     BrandComponent,
     SoundItemComponent,
-    SoundListComponent
+    SoundListComponent,
+    ChannelListComponent,
+    ChannelItemComponent
   ],
   imports: [
     BrowserModule

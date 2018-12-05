@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { State } from './state.interface';
 import { UserState } from './user/user.state';
 import { SoundState } from './sounds/sound.state';
-import { ChannelState } from './channels/channel.state';
+import { DiscordState } from './discord/discord.state';
+import { BotState } from './bot/bot.state';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,8 @@ export class StoreService {
     this.states.push(
       new UserState(),
       new SoundState(),
-      new ChannelState()
+      new DiscordState(),
+      new BotState()
     );
 
     // =====================
@@ -52,12 +54,21 @@ export class StoreService {
       { id: '19', name: 'Viens ici sale enculé' },
       { id: '20', name: 'TA GUEUUULE' },
     ]);
-    this.get(ChannelState).setChannels([
+    this.get(DiscordState).setServer({
+      name: 'Retards Society',
+      id: 'blblbl'
+    });
+    this.get(DiscordState).setChannels([
       { id: '1', name: 'Channel 1', people: [] },
       { id: '2', name: 'Channel 2', people: [{ name: 'Jean Mich' }] },
       { id: '3', name: 'Channel 3', people: [{ name: 'Jacques' }, { name: 'J0si4nn3' }] },
       { id: '4', name: 'Channel 4', people: [{ name: 'DK v4d0R' }] },
     ]);
+    this.get(BotState).setBotInfo({
+      channelId: '3',
+      currentSoundId: null,
+      speaking: false
+    });
     // =====================
     // =====================
   }

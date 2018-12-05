@@ -2,10 +2,15 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 import { State } from '../state.interface';
 import { Channel } from './channel.interface';
+import { Server } from './server.interface';
 
-export class ChannelState implements State {
+export class DiscordState implements State {
 
-  name = 'channels-state';
+  name = 'discord-state';
+
+  // Infos about the server
+  private readonly _server = new BehaviorSubject<Server>(null);
+  readonly server: Observable<Server> = this._server.asObservable();
 
   // All the channels on the server
   private readonly _channels = new BehaviorSubject<Channel[]>([]);
@@ -17,5 +22,13 @@ export class ChannelState implements State {
    */
   setChannels(channels: Channel[]) {
     this._channels.next(channels);
+  }
+
+  /**
+   * Change the infos about the server
+   * @param server The new infos about the server
+   */
+  setServer(server: Server) {
+    this._server.next(server);
   }
 }

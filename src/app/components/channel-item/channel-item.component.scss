@@ -1,0 +1,56 @@
+@import '../../../styles/variables';
+
+#app-channel-item {
+  font-size: 14px;
+  padding: 8px 0;
+
+  &:hover, &.selected {
+    position: relative;
+    cursor: pointer;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: -12px;
+      top: 12px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $accent;
+    }
+  }
+
+  &:not(:hover).selected::before {
+    width: 5px;
+    height: 5px;
+    top: 13px;
+    left: -11px;
+  }
+
+  .channel-item--name {
+    font-weight: 700;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  .channel-item--person {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    padding: 2px 15px;
+  }
+
+  .channel-item--person--name {
+    margin-left: 10px;
+  }
+
+  .channel-item--person--picture {
+    width: 20px;
+    height: 20px;
+    background-color: $secondary;
+    border: 1px solid $light;
+    border-radius: 50%;
+  }
+}

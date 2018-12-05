@@ -1,0 +1,5 @@
+<div id="app-channel-list">
+  <app-channel-item [channel]="channel" [botInfo]="botState.botInfo | async"
+  *ngFor="let channel of channels" (click)="changeChannel(channel.id)">
+  </app-channel-item>
+</div>

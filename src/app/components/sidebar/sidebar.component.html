@@ -1,3 +1,7 @@
 <div id="app-sidebar">
+  <div class="server-info">
+    <h2 class="server-info--title">{{ (discordState.server | async).name }}</h2>
+  </div>
 
+  <app-channel-list [channels]="discordState.channels | async"></app-channel-list>
 </div>

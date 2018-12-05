@@ -3,4 +3,14 @@
 #app-sidebar {
   height: 100%;
   background-color: $primary;
+  padding: 30px 40px;
+
+  .server-info--title {
+    font-size: 18px;
+  }
+
+  app-channel-list {
+    display: block;
+    margin-top: 10px;
+  }
 }
