@@ -14,6 +14,7 @@
   }
 
   app-sidebar {
+    overflow-y: auto;
     grid-area: sidebar;
   }
 
@@ -36,5 +37,8 @@
   
   ::-webkit-scrollbar-thumb {
       background-color: $accent;
+  }
+  .sidebar-bis::-webkit-scrollbar-thumb {
+    background-color: $grey;
   }
 }

@@ -62,7 +62,7 @@ export class StoreService {
       { id: '1', name: 'Channel 1', people: [] },
       { id: '2', name: 'Channel 2', people: [{ name: 'Jean Mich' }] },
       { id: '3', name: 'Channel 3', people: [{ name: 'Jacques' }, { name: 'J0si4nn3' }] },
-      { id: '4', name: 'Channel 4', people: [{ name: 'DK v4d0R' }] },
+      { id: '4', name: 'Channel 4', people: [{ name: 'DK v4d0R' }] }
     ]);
     this.get(BotState).setBotInfo({
       channelId: '3',

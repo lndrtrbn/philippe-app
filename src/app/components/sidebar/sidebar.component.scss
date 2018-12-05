@@ -1,7 +1,7 @@
 @import '../../../styles/variables';
 
 #app-sidebar {
-  height: 100%;
+  min-height: 100%;
   background-color: $primary;
   padding: 30px 40px;
 
