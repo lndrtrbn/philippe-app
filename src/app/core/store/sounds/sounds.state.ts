@@ -6,8 +6,10 @@ import { Sound } from './sound.interface';
 export class SoundsState {
 
   sounds: Sound[];
+  filteredSounds: Sound[];
 
   constructor() {
     this.sounds = [];
+    this.filteredSounds = [];
   }
 }

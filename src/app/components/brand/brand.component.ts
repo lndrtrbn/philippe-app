@@ -11,5 +11,4 @@ export class BrandComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
