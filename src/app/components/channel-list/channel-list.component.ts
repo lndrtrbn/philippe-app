@@ -1,36 +1,29 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { first } from 'rxjs/operators';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { Channel } from 'src/app/core/store/discord/channel.interface';
-import { BotState } from 'src/app/core/store/bot/bot.state';
-import { StoreService } from 'src/app/core/store/store.service';
+import { DiscordChannel } from '@core/store/discord/discord.interface';
+import { PhilippeStatus } from '@core/store/philippe/philippe.interface';
 
 @Component({
   selector: 'app-channel-list',
   templateUrl: './channel-list.component.html',
   styleUrls: ['./channel-list.component.scss']
 })
-export class ChannelListComponent implements OnInit {
+export class ChannelListComponent {
 
-  @Input() channels: Channel[];
-  botState: BotState;
+  @Input() channels: DiscordChannel[];
+  @Input() philippe: PhilippeStatus;
 
-  constructor(
-    private readonly store: StoreService
-  ) { }
+  @Output() channelChanged = new EventEmitter<DiscordChannel>();
 
-  ngOnInit() {
-    this.botState = this.store.get(BotState);
-  }
+  constructor() { }
 
   /**
-   * Change the channel which the bot should play sound
+   * Emits an event to tell to change Philippe channel
    * @param channelId The new channel for the bot
    */
-  async changeChannel(channelId: string) {
-    this.botState.botInfo.pipe(first()).subscribe(botInfo => {
-      botInfo.channelId = channelId;
-      this.botState.setBotInfo(botInfo);
-    });
+  changeChannel(newChannel: DiscordChannel) {
+    if (newChannel) {
+      this.channelChanged.emit(newChannel);
+    }
   }
 }

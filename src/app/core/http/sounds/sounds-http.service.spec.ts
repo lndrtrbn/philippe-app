@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { StoreService } from './store.service';
+import { SoundsHttpService } from './sounds-http.service';
 
-describe('StoreService', () => {
+describe('SoundsHttpService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: StoreService = TestBed.get(StoreService);
+    const service: SoundsHttpService = TestBed.get(SoundsHttpService);
     expect(service).toBeTruthy();
   });
 });

@@ -44,6 +44,11 @@
 
   .channel-item--person--name {
     margin-left: 10px;
+
+    &.philippe {
+      color: $accent;
+      font-style: italic;
+    }
   }
 
   .channel-item--person--picture {

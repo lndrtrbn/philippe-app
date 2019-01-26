@@ -1,22 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { StoreService } from 'src/app/core/store/store.service';
-import { SoundState } from 'src/app/core/store/sounds/sound.state';
+
+import { ComponentWithSub } from '@core/component-with-sub';
+import { SoundsStore } from '@core/store/sounds/sounds.store';
+import { SoundsState } from '@core/store/sounds/sounds.state';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent extends ComponentWithSub implements OnInit {
 
-  soundState: SoundState;
+  soundState: SoundsState;
 
   constructor(
-    private readonly store: StoreService
-  ) { }
+    private readonly soundsStore: SoundsStore
+  ) { super(); }
 
   ngOnInit() {
-    this.soundState = this.store.get(SoundState);
+    this.subscriptions.push(
+      this.soundsStore.state.subscribe(state => this.soundState = state)
+    );
   }
 
   /**
@@ -24,6 +28,6 @@ export class HeaderComponent implements OnInit {
    * @param value The new search value
    */
   search(value: string) {
-    this.soundState.setSearch({ value });
+    this.soundsStore.searchSounds(value);
   }
 }
