@@ -4,6 +4,7 @@
   </div>
 
   <app-channel-list 
-    [channels]="discordState?.server.channels" [philippe]="philippeState?.philippe">
+    [channels]="discordState?.server.channels" [philippe]="philippeState?.status"
+    (channelChanged)="changeChannel($event)">
   </app-channel-list>
 </div>

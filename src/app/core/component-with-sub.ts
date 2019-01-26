@@ -7,7 +7,9 @@ import { Subscription } from 'rxjs';
  * 
  * Why ? Because each subscribe should be unsubscribed when the
  * component is destroyed. This class is doing that for us and we
- * don't have to do it manually in each component.
+ * don't have to do it manually in each component. To do so, you
+ * just have to push your component's subscription in the array
+ * of subscriptions.
  * 
  * /!\ Don't forget to call the stopSubscriptions() method
  * if you override the ngOnDestroy() method in your component
